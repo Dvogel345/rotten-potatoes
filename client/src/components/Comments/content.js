@@ -31,18 +31,18 @@ const ContentComments = () => {
     const handleFormSubmit = async e => {
         // require('dotenv')
         e.preventDefault();
-            // try {
-            //   const body = { user_id, movie_id, rating, comment };
-            //   const response = await fetch(`PG_URI`, {
-            //     method: "POST",
-            //     headers: { "Content-Type": "application/json" },
-            //     body: JSON.stringify(body)
-            //   });
-            //   window.location = "/";
-            //   console.log(response)
-            // } catch (err) {
-            //   console.error(err.message);
-            // };
+            try {
+              const body = { user_id, movie_id, rating, comment };
+              const response = await fetch(`PG_URI`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(body)
+              });
+              window.location = "/";
+              console.log(response)
+            } catch (err) {
+              console.error(err.message);
+            };
 
     }
     // STARS RATING
