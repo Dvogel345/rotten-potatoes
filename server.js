@@ -25,6 +25,8 @@ try {
     // console.log(`Connected with Sequelize at ${process.env.PG_URI}`)/
 } catch(err) {
     console.log(`Unable to connect to PG: ${err}`) 
+    sequelize.authenticate()
+    // console.log(`Connected with Sequelize at ${process.env.PG_URI}`)
 }
 
 // ROOT
@@ -35,15 +37,15 @@ app.get('/', (req, res) => {
 })
 
 // CONTROLLERS 
-const usersController = require('./sever/controllers/user_controller')
+const usersController = require('./controllers/user_controller')
 app.use('/users', usersController)
 
-const ratingsController = require('./sever/controllers/rating_controller')
+const ratingsController = require('./controllers/rating_controller')
 app.use('/ratings', ratingsController)
 
-const moviesController = require('./sever/controllers/movie_controller')
+const moviesController = require('./controllers/movie_controller')
 app.use('/movies', moviesController)
 
 app.listen(port, () => {
-  console.log(`Server is up on port ${port}!`);
+    console.log(`Server is up on port ${port}!`);
 });
