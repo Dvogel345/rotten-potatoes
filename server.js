@@ -25,8 +25,6 @@ try {
     // console.log(`Connected with Sequelize at ${process.env.PG_URI}`)/
 } catch(err) {
     console.log(`Unable to connect to PG: ${err}`) 
-    sequelize.authenticate()
-    // console.log(`Connected with Sequelize at ${process.env.PG_URI}`)
 }
 
 // ROOT
